@@ -1,0 +1,7 @@
+[package]
+name = "convert_temp"
+version = "0.1.0"
+authors = ["Simon Roberts <simon.roberts@life.church>"]
+edition = "2018"
+
+[dependencies]
