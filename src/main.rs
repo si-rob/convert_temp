@@ -37,7 +37,7 @@ fn get_temp(temp_type: String){
         io::stdin().read_line(&mut temp)
             .expect("Failed to get temperature");
 
-        let temp: i32 = match temp.trim().parse() {
+        let temp: f32 = match temp.trim().parse() {
             Ok(num) => num,
             Err(_) => continue,
         };
@@ -51,16 +51,16 @@ fn get_temp(temp_type: String){
     }
 }
 
-fn f_to_c(temp: i32) {
+fn f_to_c(temp: f32) {
     //    (32°F − 32) × 5/9 = 0°C
-    let celsius = (temp - 32) * 5 / 9;
+    let celsius = (temp - 32.0) * 5.0 / 9.0;
     println!("{}F is equal to {}C", temp, celsius);
     convert_again();
 }
     
-fn c_to_f(temp: i32) {
+fn c_to_f(temp: f32) {
     // (32°C × 9/5) + 32 = 89.6°F
-    let fahrenheit = (temp * 9 / 5) + 32;
+    let fahrenheit = (temp * 9.0 / 5.0) + 32.0;
     println!("{}C is equal to {}F.", temp, fahrenheit);
     convert_again();
 }
