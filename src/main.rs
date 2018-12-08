@@ -49,7 +49,6 @@ fn get_temp(temp_type: String){
         }
         break;
     }
-
 }
 
 fn f_to_c(temp: i32) {
@@ -72,19 +71,18 @@ fn convert_again() {
     println!("Would you like to convert another temperature? Press Y to continue | N to exit.");
     loop {
 
-    io::stdin().read_line(&mut again)
-        .expect("Failed to get input");
+        io::stdin().read_line(&mut again)
+            .expect("Failed to get input");
 
-    if again.trim().to_lowercase() == "n" {
-        println!("Thanks for using Convert Temp.");
+        if again.trim().to_lowercase() == "n" {
+            println!("Thanks for using Convert Temp.");
+            break;
+        } else if again.trim().to_lowercase() == "y" {
+            main();
+        }
+        else {
+            println!("Please choose Y or N");
+        }
         break;
-    } else if again.trim().to_lowercase() == "y" {
-        main();
     }
-    else {
-        println!("Please choose Y or N");
-    }
-    break;
-}
-
 }
